@@ -33,18 +33,18 @@ jobs:
 
       - name: Build image from Dockerfile
         run: |
-          docker build -t test_${{ github.run_number }}:v1 .
+          docker build -t devsecopslab :v1
 
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.Bintoukebe }}
+          password: ${{ secrets.Bintouhawa0921 }}
 
       - name: Push Image
         run: |
           docker tag test_${{ github.run_number }}:v1 hashko/devsecopslab:v${{ github.run_number }}
-          docker push <dockeruser>/<dockerrepo>:v${{ github.run_number }}
+          docker push <Bintoukebe>/<devsecopslab>:v${{ github.run_number }}
 
       - name: Checkout the ENV Repo
         uses: actions/checkout@v3
@@ -63,7 +63,7 @@ jobs:
 
       - name: Commit and Push to ENV repo
         run: |
-          git config  user.email "your email"
-          git config  user.name "${{ github.actor }}"
+          git config  user.email "bintou.kebe.edu@groupe-gema.com"
+          git config  user.name "git config user.name "Bintoukebe"
           git commit -a -m 'Env file is updated with the new image ${{ github.ref_name }}'
-          git push https://${{ secrets.GITLEAKS }}@github.com<dockeruser>/<dockerrepo>.git
+          git push https://${{ secrets.GITLEAKS }}@github.com<Bintoukebe>/<Bintoukebe>.git
