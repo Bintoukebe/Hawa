@@ -64,6 +64,6 @@ jobs:
       - name: Commit and Push to ENV repo
         run: |
           git config  user.email "bintou.kebe.edu@groupe-gema.com"
-          git config  user.name "${{ Bintoukebe }}"
+          git config  user.name "Bintoukebe"
           git commit -a -m 'Env file is updated with the new image ${{ github.ref_name }}'
           git push https://${{ secrets.GITLEAKS }}@github.combintoukebe/devsecopslab.git
