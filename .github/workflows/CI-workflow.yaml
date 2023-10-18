@@ -44,13 +44,13 @@ jobs:
 
       - name: Push Image
         run: |
-          docker tag test_${{ github.run_number }}:v1 bintoukébé/devsecopslab :v${{ github.run_number }})
-          docker push bintoukébé/devsecopslab:v${{ github.run_number }}
+          docker tag test_${{ github.run_number }}:v1 bintoukebe/devsecopslab :v${{ github.run_number }})
+          docker push bintoukebe/devsecopslab:v${{ github.run_number }}
 
       - name: Checkout the ENV Repo
         uses: actions/checkout@v3
         with:
-          repository: 'bintoukébé/devsecopslab'
+          repository: 'bintoukebe/devsecopslab'
           ref: 'main'
           token:  ${{ secrets.GITLEAKS}}
           
