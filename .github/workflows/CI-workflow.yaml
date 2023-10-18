@@ -45,7 +45,7 @@ jobs:
       - name: Push Image
         run: |
           docker tag test_${{ github.run_number }}:v1 hashko/devsecopslab:v${{ github.run_number }}
-          docker push <dockeruser>/<dockerrepo>:v${{ github.run_number }}
+          docker push Bintoukebe:v${{ github.run_number }}
 
       - name: Checkout the ENV Repo
         uses: actions/checkout@v3
